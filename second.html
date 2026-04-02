@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>狗狗之家-狗狗介绍</title>
+    <link rel="stylesheet" type="text/css" href="../css/swiper.bundle.min.css">
+    <style>
+        /* 添加 CSS 样式 */
+         body {
+            margin: 0;
+            padding: 0;
+            background: url("images/背景.jpg"); /* 替换为你图片的路径 */
+            background-size: cover; /* 让图片覆盖整个页面 */
+            background-position: center; /* 居中显示背景图片 */
+            background-attachment: fixed; /* 背景图片固定，滚动时不动 */
+            color: #333;
+        }
+        .container {
+             max-width: 1200px;
+             margin: 0 auto;
+        }
+
+
+
+        .header ul {
+           list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #A4E0FF;
+            padding: 10px 20px;
+            opacity: 0.9; /* 整体透明度 */
+        }
+
+        .header  ul li {
+            display: inline;
+        }
+
+        .header input[type="text"] {
+            padding: 5px;
+            margin-right: 10px;
+            border: 1px solid #FF7043;
+            border-radius: 5px;
+        }
+
+        .header input[type="submit"] {
+            padding: 5px 10px;
+            border: none;
+            background-color: #0260A0; /* 按钮背景颜色 */
+            color: #fff; /* 按钮文字颜色 */
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        nav .navlist {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+            background-color:#BFD641;
+            padding: 10px 0;
+        }
+
+        nav .navlist li {
+            display: inline;
+        }
+
+        nav .navlist a {
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav .navlist a:hover {
+            background-color: #ff6f61;
+        }
+
+        .slideshow img {
+            width: 100%;
+            height: auto;
+        }
+
+        .s-recommend {
+            padding: 20px;
+            background-color: #FFF1B9; /* 推荐区域背景颜色 */
+            opacity: 0.9; /* 整体透明度 */
+            border-radius: 10px;
+        }
+
+        .s-recommend h2 {
+            text-align: center;
+            margin-top:2px;
+            margin-bottom: 18px;
+            color: #FFA41A; /* 标题颜色 */
+            font-family: "Arial", sans-serif; /* 设置字体 */
+            font-weight:bold;
+            font-size:35px;
+        }
+
+        .c-recommend {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .character {
+            width: 48%;
+            background-color: #FFF3E0; /* 狗狗介绍背景颜色 */
+            margin-bottom: 20px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            border-radius: 5px;
+        }
+
+        .character img {
+            width: 130px;
+            height: 105px;
+            margin-right: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .character:hover img {
+            transform: scale(1.1); /* 悬停时放大10% */
+        }
+
+        .character h3 {
+            margin: 0 0 10px 0;
+            color: #FECC15; /* 角色名字颜色 */
+            font-family: "Arial", sans-serif; /* 设置字体 */
+        }
+
+        .character span {
+            font-size: 14px;
+            color: #5D4037; /* 文字颜色 */
+            font-family: "Arial", sans-serif; /* 设置字体 */
+        }
+
+       footer {
+            background-image: url('images/footer.png');
+            background-repeat: no-repeat;
+            background-size: 30%;
+            background-position: center;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        .container .header .title {
+            font-family: "Arial", sans-serif; /* 设置字体 */
+            font-size: 24px; /* 设置字体大小 */
+            font-weight: bold; /* 加粗 */
+            color: #333; /* 设置字体颜色 */
+            text-align: center;
+            background-image: url('images/icon1.png'); /* 添加图标路径 */
+            background-repeat: no-repeat;
+            background-size: 30px; /* 调整图标大小 */
+            background-position: left center; /* 图标位置 */
+            padding-left: 34px; /* 给文本留出图标空间 */
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <ul>
+                <li class="title">狗狗百科</li>
+                <li>
+                    <input type="text" placeholder="输入搜索内容">
+                    <input type="submit" value="搜索">
+                </li>
+            </ul>
+        </header>
+        <nav>
+            <ul class="navlist">
+                <li><a href="11.html">网站首页</a></li>
+                <li><a href="second.html">狗狗介绍</a></li>
+                <li><a href="third.html">狗狗医疗</a></li>
+                <li><a href="four.html">国际爱狗日</a></li>
+                <li><a href="five.html">登陆页面</a></li>
+            </ul>
+        </nav>
+        <div class="slideshow">
+            <img src="../images/second.webp" alt="">
+        </div>
+        <div class="s-recommend">
+            <h2>狗狗百科(点击跳转知识百科)</h2>
+
+            <div class="c-recommend">
+                <div class="character">
+                    <a href="https://baike.baidu.com/item/%E6%96%97%E7%89%9B%E7%8A%AC/629877">
+                    <img src="images/斗牛犬.jpg" alt="">
+                    </a>
+                    <div>
+                        <h3>法国斗牛犬</h3>
+                        <span>
+                            法国斗牛犬亲切，敦厚，忠诚，执著，勇敢，具有独特的品位，而且完全表露于表情与动作。对小孩和善，同时也是作风彪悍，能力强，对于新鲜事物有极强的好奇心的优秀玩具犬。
+                        </span>
+                    </div>
+                </div>
+
+                <div class="character">
+                    <a href="https://baike.baidu.com/item/%E9%87%91%E6%AF%9B%E5%AF%BB%E5%9B%9E%E7%8A%AC?fromModule=lemma_search-box">
+                    <img src="images/金毛.jpg" alt="">
+                    </a>
+                    <div>
+                        <h3>金毛寻回犬</h3>
+                        <span>
+                            金毛寻回猎犬体格健壮，工作热心，可以用来捕捉水鸟，任何气候下都能在水中游泳。深受猎手的喜爱，主要被作为家犬饲养，为大型犬。它也是人类忠实、友善的家庭朋友，也可训练为优秀的导盲犬。
+                        </span>
+                    </div>
+                </div>
+
+            <div class="c-recommend">
+                <div class="character">
+                    <a href="https://baike.baidu.com/item/%E5%90%89%E5%A8%83%E5%A8%83/124178">
+                    <img src="images/吉娃娃.jpg" alt="">
+                    </a>
+                    <div>
+                        <h3>吉娃娃</h3>
+                        <span>
+                            吉娃娃犬不仅是可爱的小型宠物犬，同时也具备大型犬的狩猎与防范本能，具有类似梗类犬的气质。此犬分为长毛种和短毛种。这种狗体型娇小，对其他狗不胆怯，对待主人极有独占心。
+                        </span>
+                    </div>
+                </div>
+
+                <div class="character">
+                    <a href="https://baike.baidu.com/item/%E7%A7%8B%E7%94%B0%E7%8A%AC/504109?fromtitle=%E6%97%A5%E6%9C%AC%E7%A7%8B%E7%94%B0%E7%8A%AC&fromid=5320062&fromModule=lemma_search-box">
+                    <img src="images/秋田犬.jpg" alt="">
+                    </a>
+                    <div>
+                        <h3>日本秋田犬</h3>
+                        <span>
+                            秋田犬是日本国犬，它的祖先，被称呼为山地狩猎犬。本来在日本犬里大型犬是不存在的，秋田犬是大型的熊猎犬。日系秋田犬腿较长，身形属细长，毛多为两色。美系秋田犬腿较短粗，整体的身形比日系壮实，毛多为白黑棕三色。
+                        </span>
+                    </div>
+                </div>
+
+            <div class="c-recommend">
+                <div class="character">
+                    <a href="https://baike.baidu.com/item/%E9%A9%AC%E5%B0%94%E6%B5%8E%E6%96%AF%E7%8A%AC?fromModule=lemma_search-box">
+                    <img src="images/马尔济斯.jpg" alt="">
+                    </a>
+                    <div>
+                        <h3>马尔济斯犬</h3>
+                        <span>
+                            玛尔济斯犬是从头到脚披着白色丝状长毛的玩具犬。它的态度文雅而深情、热切而行动活泼，尽管体型小却具有令人满意的作为伴侣犬所需的精力。玛尔济斯犬是温和的小犬，全家的宠物。
+                    </div>
+                </div>
+                <div class="character">
+                    <a href="https://baike.baidu.com/item/%E8%85%8A%E8%82%A0%E7%8A%AC/842373">
+                    <img src="images/腊肠犬.jpg" alt="">
+                    </a>
+                    <div>
+                        <h3>腊肠犬</h3>
+                        <span>
+                            肠犬(Dachshund)是一种短腿，长身的猎犬。其名源于德国，原意"獾狗"。此品种被发展为嗅猎，追踪，及捕杀獾类及其他穴居的动物。因为腊肠犬的天性独立自主，所以照顾起来很容易，主人下达的指令也都会迅速理解遵从。
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-recommend">
+                <div class="character">
+                    <a href="https://baike.baidu.com/item/%E6%AF%94%E7%86%8A%E7%8A%AC/6139">
+                    <img src="images/比熊.jpg" alt="">
+                    </a>
+                    <div>
+                        <h3>比熊犬</h3>
+                        <span>
+                            比熊犬性情温顺、敏感、顽皮又不乏可爱。整体外貌而言，比熊犬体型较小，但身体强壮，活泼可爱，长满蓬松毛发的小尾巴竖在背后，长着一双萌动而又好奇的黑眼睛，它的动作优雅，轻灵惹人欢喜。
+                        </span>
+                    </div>
+                </div>
+                <div class="character">
+                    <a href="https://baike.baidu.com/item/%E8%B4%B5%E5%AE%BE%E7%8A%AC/787021">
+                    <img src="images/贵宾.jpg" alt="">
+                    </a>
+                    <div>
+                        <h3>贵宾犬</h3>
+                        <span>
+                           贵妇犬也可称“卷毛狗”，属于非常聪明的且喜欢狩猎的犬种，贵妇犬聪明，活泼，性情优良，极易近人，是一种忠实的犬种。 分为标准型、迷你型、玩具犬 三种。一般而言，标准型贵妇犬是三种类型中最健康的犬种。
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-recommend">
+                <div class="character">
+                    <a href="https://baike.baidu.com/item/%E8%A5%BF%E9%AB%98%E5%9C%B0%E7%99%BD%E6%A2%97?fromModule=lemma_search-box">
+                    <img src="images/西高地.jpg" alt="">
+                    </a>
+                    <div>
+                        <h3>西高地白梗</h3>
+                        <span>
+                            西高地白梗起源于19世纪，是来自苏格兰西部高地的纯白色梗类。在外貌上有点像狐狸，鼻梁较长据说所有苏格兰梗都是由一个共同祖先继承下来，然后再分布到英国各地。西高地最初用来捕猎水獭，狐狸和老鼠。
+                        </span>
+                    </div>
+                </div>
+                <div class="character">
+                    <a href="https://baike.baidu.com/item/%E8%BE%B9%E5%A2%83%E7%89%A7%E7%BE%8A%E7%8A%AC/406513">
+                    <img src="images/边牧.jpg" alt="">
+                    </a>
+                    <div>
+                        <h3>边境牧羊犬</h3>
+                        <span>
+                            边境牧羊犬(英语：Border-Collie)，又名苏格兰牧羊犬，是一种原产自苏格兰和英格兰边界一带的牧羊犬，主要协助农场放牧，故称「牧羊犬」。边境牧羊犬以精力旺盛且容易学习杂技运动而闻名，且被学界认为是最聪明的犬种。
+                        </span>
+                    </div>
+                </div>
+
+                <div class="character">
+                    <a href="https://baike.baidu.com/item/%E8%97%8F%E7%8D%92/5311">
+                    <img src="images/藏獒.jpg" alt="">
+                    </a>
+                    <div>
+                        <h3>藏獒</h3>
+                        <span>
+                           藏獒作为最为异常凶猛的护卫犬，藏獒非常不适合在人群密集地和空间狭小的地区饲养。它们独立，服从命令，对自己的主人和领地极为忠诚。
+                        </span>
+                    </div>
+                </div>
+                <div class="character">
+                    <a href="https://baike.baidu.com/item/%E5%A8%81%E5%B0%94%E5%A3%AB%E6%9F%AF%E5%9F%BA%E7%8A%AC/84385?fromtitle=%E6%9F%AF%E5%9F%BA&fromid=9603115">
+                    <img src="images/柯基.jpg" alt="">
+                    </a>
+                    <div>
+                        <h3>柯基犬</h3>
+                        <span>
+                            柯基犬一般指威尔士柯基犬，是一种小型犬，性格非常稳健，完全没有一般小型犬的神经质，是非常适合小孩的守护犬。它们的胆子很大，也相当机警，能高度警惕地守护家园，是最受欢迎的小型护卫犬之一。
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+    </div>
+</body>
+
+    <footer></footer>
+
+</html>
+
+
+
+
+

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>狗狗之家-登陆页面</title>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url(images/背景.jpg);
+            background-size: cover;
+            background-position: center; 
+            background-attachment: fixed;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .headlist ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #A4E0FF;
+            padding: 10px 20px;
+            opacity: 0.9; /* 整体透明度 */
+        }
+
+        .headlist ul li {
+            display: inline;
+        }
+
+        .headlist input[type="text"] {
+            padding: 5px;
+            margin-right: 10px;
+            border: 1px solid #FF7043;
+            border-radius: 5px;
+        }
+
+        .headlist input[type="submit"] {
+            padding: 5px 10px;
+            border: none;
+            background-color: #0260A0; /* 按钮背景颜色 */
+            color: #fff; /* 按钮文字颜色 */
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        nav .navlist {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+            background-color:#BFD641;
+            padding: 10px 0;
+        }
+
+        nav .navlist li {
+            display: inline;
+        }
+
+        nav .navlist a {
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav .navlist a:hover {
+            background-color: #ff6f61;
+        }
+
+        * {
+           margin: 0;
+           padding: 0;
+        }
+
+        .box1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .box{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 350px;
+            height: 380px;
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            border-left: 1px solid rgba(255, 255, 255, 0.5);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid black;
+            backdrop-filter: blur(10px);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+           .box > h2 {
+
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 30px;
+        }
+
+        .box .input-box {
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            }
+
+        .box .input-box label {
+            font-size: 18px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 5px;
+        }
+
+        .box .input-box input {
+            letter-spacing: 1px;
+            font-size: 14px;
+            box-sizing: border-box;
+            width: 250px;
+            height: 35px;
+            border-radius: 5px;
+            border: 1px solid rgba(255,255,255,0.5);
+            background: rgba(255,255,255,0.2);
+            outline: none;
+            padding: 0 12px;
+            color: rgba(255,255,255,0.9);
+            transition: 0.2s;
+        }
+
+        .box .input-box input:focus {
+            border: 1px solid rgba(255,255,255,0.8);
+        }
+
+        .box .btn-box {
+            width: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+        }
+
+        .box .btn-box > a {
+            outline: none;
+            display: block;
+            width: 250px;
+            text-align: end;
+            text-decoration: none;
+            font-size: 13px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .box .btn-box > a:hover {
+            color: rgba(255,255,255,1);
+        }
+
+        .box .btn-box > div {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box .btn-box > div > button {
+            outline: none;
+            margin-top: 10px;
+            display: block;
+            font-size: 14px;
+            border-radius: 5px;
+            transition: 0.2s;
+        }
+
+        .box .btn-box > div > button:nth-of-type(1) {
+            width: 120px;
+            height: 35px;
+            color: rgba(255,255,255,0.9);
+            border: 1px solid rgba(192, 119, 91, 0.7);
+            background: rgba(192, 119, 91, 0.5);
+        }
+
+        .box .btn-box > div > button:nth-of-type(2) {
+            width: 120px;
+            height: 35px;
+            margin-left: 10px;
+            color: rgba(255,255,255,0.9);
+            border: 1px solid rgba(192, 119, 91, 0.7);
+            background: rgba(192, 119, 91, 0.5);
+        }
+
+        .box .btn-box > div > button:hover {
+            border: 1px solid rgba(251, 128, 71, 0.7);
+            background: rgba(251, 128, 71, 0.5);
+        }
+
+        .container .headlist .title {
+            font-family: "Arial", sans-serif; /* 设置字体 */
+            font-size: 24px; /* 设置字体大小 */
+            font-weight: bold; /* 加粗 */
+            color: #333; /* 设置字体颜色 */
+            text-align: center;
+            background-image: url('images/icon1.png'); /* 添加图标路径 */
+            background-repeat: no-repeat;
+            background-size: 30px; /* 调整图标大小 */
+            background-position: left center; /* 图标位置 */
+            padding-left: 34px; /* 给文本留出图标空间 */
+        }
+
+    </style>
+</head>
+
+
+<body>
+    <div class="container">
+        </br>
+        <header class="headlist">
+            <ul>
+                <li class="title">狗狗之家</li>
+                <li>
+                    <input type="text" placeholder="输入搜索内容">
+                    <input type="submit" value="搜索">
+                </li>
+            </ul>
+            <br>
+        </header>
+        <nav>
+            <ul class="navlist">
+                <li><a href="11.html">网站首页</a></li>
+                <li><a href="second.html">狗狗百科</a></li>
+                <li><a href="third.html">狗狗医疗</a></li>
+                <li><a href="four.html">国际爱狗日</a></li>
+                <li><a href="five.html">登陆页面</a></li>
+            </ul>
+        </nav>      
+    </div>
+
+    <div class="box">
+        <div class="box1">
+        <h2>Login</h2>
+        <div class="input-box">
+            <label>账号</label>
+            <input type="text"/>
+        </div>
+        <div class="input-box">
+            <label>密码</label>
+            <input type="password"/>
+        </div>
+        <div class="btn-box">
+            <a href="#">忘记密码？</a>
+            <div>
+                <button onclick="showAlert()">登录</button>
+                <button>注册</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="successBox" style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: lightgreen; padding: 20px; border-radius: 5px; text-align: center;">
+        <p>登陆成功</p>
+    </div>
+
+    <script>
+        function showAlert() {
+            alert('登录成功');
+        }
+    </script>
+    
+</body>
+
+</html>

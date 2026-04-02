@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>狗狗之家-国际爱狗日</title>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url("images/背景.jpg"); /* 替换为你图片的路径 */
+            background-size: cover; /* 让图片覆盖整个页面 */
+            background-position: center; /* 居中显示背景图片 */
+            background-attachment: fixed; /* 背景图片固定，滚动时不动 */
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+/*导航栏1*/
+        .headlist ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #A4E0FF;
+            padding: 10px 20px;
+            opacity: 0.9; /* 整体透明度 */
+        }
+
+        .headlist ul li {
+            display: inline;
+        }
+
+/*输入框*/
+        .headlist input[type="text"] {
+            padding: 5px;
+            margin-right: 10px;
+            border: 1px solid #FF7043;
+            border-radius: 5px;
+        }
+/*搜索键*/
+        .headlist input[type="submit"] {
+            padding: 5px 10px;
+            border: none;
+            background-color: #0260A0; /* 按钮背景颜色 */
+            color: #fff; /* 按钮文字颜色 */
+            border-radius: 5px;
+            cursor: pointer;
+        }
+/*导航栏2*/
+        nav .navlist {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+            background-color: #BFD641;
+            padding: 10px 0;
+        }
+
+        nav .navlist li {
+            display: inline;
+        }
+
+        nav .navlist a {
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav .navlist a:hover {
+            background-color: #ff6f61;
+        }
+
+/*音乐播放器*/
+        .music-player {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        audio {
+            width: 60%;
+            margin-top: 20px;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .button-container button {
+            padding: 10px 20px;
+            background-color: #BFD641;
+            border: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .button-container button:hover {
+            background-color: #FF6F61;
+        }
+
+        .s_recommend {
+            background-color: #FFF1B9;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .s_recommend h2 {
+            text-align: center;
+            margin-top:2px;
+            margin-bottom: 18px;
+            color: #FFA41A; /* 标题颜色 */
+            font-family: "Arial", sans-serif; /* 设置字体 */
+            font-weight:bold;
+            font-size:35px;
+        }
+
+        .c_recommend {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .c_recommend img {
+            max-width: 450px; /* 修改为你希望的大小 */
+            border-radius: 10px;
+        }
+
+        .c_recommend p {
+            max-width: 600px;
+        }
+
+        footer {
+            background-image: url('images/footer.png');
+            background-repeat: no-repeat;
+            background-size: 30%;
+            background-position: center;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        .container .headlist .title {
+            font-family: "Arial", sans-serif; /* 设置字体 */
+            font-size: 24px; /* 设置字体大小 */
+            font-weight: bold; /* 加粗 */
+            color: #333; /* 设置字体颜色 */
+            text-align: center;
+            background-image: url('images/icon1.png'); /* 添加图标路径 */
+            background-repeat: no-repeat;
+            background-size: 30px; /* 调整图标大小 */
+            background-position: left center; /* 图标位置 */
+            padding-left: 34px; /* 给文本留出图标空间 */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .whole {
+            padding: 20px;
+        }
+        .content-f {
+            text-align: center;
+        }
+        .container-box {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .item {
+            margin: 0 10px;
+            position: relative;
+        }
+        .item img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .blackborad-text {
+            margin: 20px 0;
+        }
+        .canvas-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        canvas {
+            border: 1px solid #ccc;
+            display: block;
+            margin: 0 auto;
+        }
+
+
+        .content {
+            text-align: center;
+        }
+        .success-message {
+            color: green;
+            margin-top: 10px;
+            display: none;
+        }
+        form label {
+        display: block;
+        margin: 5px 0 5px;
+    }
+    form input, form textarea {
+        margin-bottom: 10px;
+        padding: 5px;
+        width: 90%;
+        max-width: 400px;
+    }
+    form textarea {
+        margin-top: 15px;
+    }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="headlist">
+            <ul>
+                <li class="title">狗狗百科</li>
+                <li>
+                    <input type="text" placeholder="输入搜索内容">
+                    <input type="submit" value="搜索">
+                </li>
+            </ul>
+        </header>
+        <nav>
+            <ul class="navlist">
+                <li><a href="11.html">网站首页</a></li>
+                <li><a href="second.html">狗狗介绍</a></li>
+                <li><a href="third.html">狗狗医疗</a></li>
+                <li><a href="four.html">国际爱狗日</a></li>
+                <li><a href="five.html">登陆页面</a></li>
+            </ul>
+        </nav>
+        <div class="s_recommend">
+            <h2>国际爱狗日</h2>
+
+            <div class="music-player">
+                <audio id="audioPlayer" controls>
+                    <source id="audioSource" src="song1.mp3" type="audio/mp3">
+                    您的浏览器不支持音频播放。
+                </audio>
+
+                <div class="button-container">
+                    <button onclick="changeSong('music/music1.mp3')">人类呀爱我吧</button>
+                    <button onclick="changeSong('music/music2.mp3')">小狗乖乖</button>
+                    <button onclick="changeSong('music/music3.mp3')">我是你的小狗</button>
+                </div>
+            </div>
+
+            </br>
+
+            <div class="c_recommend">
+                <img src="images/lovedogday.jpg" alt="国际爱狗日">
+                <span>
+                    <p>
+                        国际爱犬日是每年的<strong style="color: red;">8月26日</strong>，也被称为“国际汪星节”或“世界爱犬日”。这个节日的设立初衷是为了引起人们对狗的保护意识，强调狗的生命同样宝贵，值得被尊重和善待。
+                    </p>
+                </br>
+                    <h3>节日背景和意义</h3>
+                    <p>
+                        国际爱犬日的设立旨在提高人们对狗的保护意识。狗不仅是家庭的守护者，也是心灵的慰藉，它们用行动诠释着最纯粹的爱。通过这个节日，希望更多的人关注到狗的生活环境和福利，倡导文明养狗，给予狗一个温暖的家。
+                    </p>
+                </br>
+                    <h3>节日习俗和活动</h3>
+                    <p>
+                        在国际爱犬日，人们通常会进行各种庆祝活动。例如，鼓励领养代替购买，关注流浪狗群体，呼吁文明养狗，如遛狗牵绳、清理狗便等。这些活动不仅是对狗狗的负责，也是对社会和他人的尊重与爱护。
+                    </p>
+                </br>
+                     <h3>历史渊源</h3>
+                    <p>
+                        虽然国际爱犬日的具体起源时间没有详细记录，但它的设立是为了表达对狗的感激之情，强调狗在人类生活中的重要角色。通过这个节日，人们可以更好地理解和尊重狗的存在和贡献。
+                    </p>
+                </span>
+            </div>
+            <div class="whole">
+    <!-- 留言互动区 -->
+    <div class="content-f">
+        <div class="photo">
+            <h3>留言互动区</h3>
+        </div>
+        <div class="container-box">
+            <div class="item">
+                <span class="border"></span>
+                <img src="images/1.jpg" alt="Image 1">
+            </div>
+            <div class="item">
+                <span class="border"></span>
+                <img src="images/2.jpg" alt="Image 2">
+            </div>
+            <div class="item">
+                <span class="border"></span>
+                <img src="images/3.jpg" alt="Image 3">
+            </div>
+        </div>
+
+        <div class="blackborad-text">
+            <h4>画一个你心中最可爱的狗狗吧！</h4>
+        </div>
+
+        <div class="canvas-container">
+            <canvas id="canvas" width="600" height="300" style="background-color: #FFF1B9;"></canvas>
+            <div>
+                <button style="background-color: yellow;" onclick="changeYellow()">Yellow</button>
+                <button style="background-color: red;" onclick="changeRed()">Red</button>
+                <button style="background-color: blue;" onclick="changeBlue()">Blue</button>
+                <button style="background-color: green;" onclick="changeGreen()">Green</button>
+                <button style="background-color: white;" onclick="changeWhite()">White</button>
+                <input type="color" id="penColor" onchange="changeColor()">
+                <button onclick="clearBord()">橡皮擦</button>
+            </div>
+            <div>
+                <button onclick="change8px()">8px</button>
+                <button onclick="addBig()">增粗</button>
+                <button onclick="changeSmall()">变细</button>
+            </div>
+            <button style="background-color: pink;" onclick="copyimage()">EXPORT</button>
+        </div>
+        
+
+        <div class="content">
+            <form id="messageForm">
+                <label for="user">用户名:</label>
+                <input type="text" name="user" id="user" onkeyup="checkUser()">
+                <span id="userError" style="color: red; opacity: 0.7;"></span>
+                <br>
+                <label for="text">留言内容:</label>
+                <textarea name="text" id="text" cols="30" rows="10"></textarea>
+                <br>
+                <input type="submit" name="sub" id="sub" value="提交">
+            </form>
+            <div class="success-message" id="successMessage">
+                您的留言已经成功提交，感谢您的留言，祝您生活愉快。
+            </div>
+        </div>
+    </div>
+</div>
+            <footer></footer>
+        </div>
+
+    </div>
+</body>
+ 
+</html>
+
+
+<script>
+    function changeSong(song) {
+        var audioPlayer = document.getElementById('audioPlayer');
+        var audioSource = document.getElementById('audioSource');
+        audioSource.src = song;
+        audioPlayer.load(); // 重新加载播放器
+        audioPlayer.play(); // 播放新歌曲
+    }
+
+    var canvas = document.getElementById('canvas');
+    var context = canvas.getContext("2d");
+    context.fillStyle = "#000000"; // 设置背景为暖色调
+    context.fillRect(0, 0, 600, 300);
+    var onoff = false;
+    var oldx = -10;
+    var oldy = -10;
+    var linecolor = "white";
+    var linw = 4;
+    var flag = false;
+    canvas.addEventListener("mousemove", draw, true);
+    canvas.addEventListener("mousedown", down, false);
+    canvas.addEventListener("mouseup", up, false);
+
+    var penc = document.getElementById("penColor");
+
+    function changeColor() {
+        linecolor = penc.value;
+    }
+
+    function down(e) {
+        onoff = true;
+        oldx = e.offsetX;
+        oldy = e.offsetY;
+    }
+
+    function up(e) {
+        onoff = false;
+    }
+
+    function draw(e) {
+        if (onoff) {
+            var newx = e.offsetX;
+            var newy = e.offsetY;
+            context.beginPath();
+            context.moveTo(oldx, oldy);
+            context.lineTo(newx, newy);
+            context.strokeStyle = flag ? "black" : linecolor;
+            context.lineWidth = flag ? 30 : linw;
+            context.lineCap = "round";
+            context.stroke();
+            oldx = newx;
+            oldy = newy;
+        }
+    }
+
+    function changeYellow() {
+        flag = false;
+        linecolor = "yellow";
+    }
+
+    function changeRed() {
+        flag = false;
+        linecolor = "red";
+    }
+
+    function changeBlue() {
+        flag = false;
+        linecolor = "blue";
+    }
+
+    function changeGreen() {
+        flag = false;
+        linecolor = "green";
+    }
+
+    function changeWhite() {
+        flag = false;
+        linecolor = "white";
+    }
+
+    function change8px() {
+        flag = false;
+        linw = 8;
+    }
+
+    function addBig() {
+        flag = false;
+        linw++;
+        if (linw > 20) {
+            linw = 20;
+        }
+    }
+
+    function changeSmall() {
+        flag = false;
+        linw--;
+        if (linw < 2) {
+            linw = 2;
+        }
+    }
+
+    function clearBord() {
+        flag = true;
+    }
+
+    function copyimage() {
+        var img_src_png = canvas.toDataURL("image/png");
+        document.getElementById("img_png").src = img_src_png;
+    }
+
+    function checkUser() {
+        const user = document.getElementById('user').value;
+        const userError = document.getElementById('userError');
+        if (user.length < 3) {
+            userError.textContent = '用户名太短';
+        } else {
+            userError.textContent = '';
+        }
+    }
+
+    document.getElementById('messageForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        const successMessage = document.getElementById('successMessage');
+        successMessage.style.display = 'block';
+    });
+</script>

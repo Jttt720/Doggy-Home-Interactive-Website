@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<canvas id="canvas" width="600" height="300" style="border:1px solid #000"></canvas>
+	<br/>
+	<button style="width:80px;height:30px;background-color:yellow" onclick="changeYellow()">yellow</button>
+	<button style="width:80px;height:30px;background-color:red" onclick="changeRed()">Red</button>
+	<button style="width:80px;height:30px;background-color:blue" onclick="changeBlue()">Blue</button>
+	<button style="width:80px;height:30px;background-color:green" onclick="changeGreen()">Green</button>
+	<button style="width:80px;height:30px;background-color:white" onclick="changeWhite()">White</button>
+	<input type="color" name="penColor" id="penColor" onchange="changeColor()" />
+	<button style="width:80px;height:30px;background-color:white" onclick="clearBord()">橡皮擦</button>
+	<br/>
+	<button style="width:80px;height:30px;background-color:white" onclick="change8px()">8px</button>
+	<button style="width:80px;height:30px;background-color:white" onclick="addBig()">增粗</button>
+	<button style="width:80px;height:30px;background-color:white" onclick="changeSmall()">变细</button>
+	<br/>
+	<button style="width:80px;height:30px;background-color:pink" onclick="copyimage()">EXPORT</button>
+	<br/>
+	<img src="" id="img_png" width="600" height="300">
+
+</body>
+</html>
+
+<script type="text/javascript">
+	var canvas = document.getElementById('canvas');
+	var context = canvas.getContext("2d");
+	context.fillStyle = "black";
+	context.fillRect(0,0,600,300);
+	var onoff = false;
+	var oldx = -10;
+	var oldy = -10;
+	var linecolor = "white";
+	var linw = 4;
+	var flag =false;
+	canvas.addEventListener("mousemove",draw,true);
+	canvas.addEventListener("mousedown",down,false);
+	canvas.addEventListener("mouseup",up,false);
+
+	var penc = document.getElementById("penColor");
+
+	function changeColor(e) {
+		linecolor=penc.value;
+	}
+
+
+	function down(e) {
+		onoff=true;
+		oldx = e.pageX-10;
+		oldy = e.pageY-10;
+	}
+
+	function up(e){
+		onoff = false;
+	}
+	function draw(e) {
+		if (onoff) {
+			if (!flag) {
+				var newx = e.pageX-10;
+				var newy = e.pageY-10;
+				context.beginPath();
+				context.moveTo(oldx,oldy);
+				context.lineTo(newx,newy);
+				context.strokeStyle = linecolor;
+				context.lineWidth = linw;
+				context.lineCap ="round";
+				context.stroke();
+				oldx = newx;
+				oldy = newy;
+			}else{
+				var newx = e.pageX-10;
+				var newy = e.pageY-10;
+				context.beginPath();
+				context.moveTo(oldx,oldy);
+				context.lineTo(newx,newy);
+				context.strokeStyle = "black";
+				context.lineWidth = 30;
+				context.lineCap ="round";
+				context.stroke();
+				oldx = newx;
+				oldy = newy;
+			}
+		}
+	}
+
+
+	function changeYellow(e) {
+		flag=false;
+		linecolor= "yellow";
+	}
+
+	function changeRed(e) {
+		flag=false;
+		linecolor = "red";
+	}
+
+	function changeBlue(e){
+		flag = false;
+		linecolor="blue";
+	}
+
+	function changeGreen(e){
+		flag= false;
+		linecolor="green";
+	}
+
+	function changeWhite(e){
+		flag=false;
+		linecolor="white";
+	}
+
+	function change8px(e){
+		flag = false;
+		linw=8
+	}
+
+	function addBig(e){
+		flag= false;
+		linw++;
+		if (linw>20) {
+			linw=20
+		}
+	}
+	function changeSmall(e) {
+		flag=false;
+		linw--;
+		if (linw<2) {
+			linw=2
+		}
+	}
+
+	function clearBord(e) {
+		flag=true;
+	}
+
+	function copyimage() {
+		var img_src_png = canvas.toDataURL("image/png");
+		document.getElementById("img_png").src = img_src_png;
+	}
+</script>
